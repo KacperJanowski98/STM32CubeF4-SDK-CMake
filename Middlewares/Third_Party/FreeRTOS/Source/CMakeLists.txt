@@ -1,0 +1,32 @@
+project(middleware_freertos)
+
+set(MIDDLEWARE_FREERTOS_DIRECTORIES
+    ${CMAKE_CURRENT_LIST_DIR}/CMSIS_RTOS
+    ${CMAKE_CURRENT_LIST_DIR}/CMSIS_RTOS_V2
+    ${CMAKE_CURRENT_LIST_DIR}/include
+)
+
+set(MIDDLEWARE_FREERTOS_SOURCES
+    ${CMAKE_CURRENT_LIST_DIR}/croutine.c
+    ${CMAKE_CURRENT_LIST_DIR}/event_groups.c
+    ${CMAKE_CURRENT_LIST_DIR}/list.c
+    ${CMAKE_CURRENT_LIST_DIR}/queue.c
+    ${CMAKE_CURRENT_LIST_DIR}/stream_buffer.c
+    ${CMAKE_CURRENT_LIST_DIR}/tasks.c
+    ${CMAKE_CURRENT_LIST_DIR}/timers.c
+)
+
+add_library(${PROJECT_NAME} STATIC ${MIDDLEWARE_FREERTOS_SOURCES})
+add_library(middleware_freertos::lib ALIAS ${PROJECT_NAME})
+
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+        ${MIDDLEWARE_FREERTOS_DIRECTORIES}
+)
+
+target_sources(${PROJECT_NAME}
+    PUBLIC
+        ${MIDDLEWARE_FREERTOS_DIRECTORIES}
+    PRIVATE
+        ${MIDDLEWARE_FREERTOS_SOURCES}
+)
