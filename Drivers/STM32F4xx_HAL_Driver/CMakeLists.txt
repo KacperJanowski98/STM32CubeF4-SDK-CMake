@@ -1,5 +1,12 @@
 project(stm32f4_hal_driver)
 
+set(MCU_MODEL STM32F407xx)
+set(CPU_PARAMETERS
+    -mcpu=cortex-m4
+    -mthumb
+    -mfpu=fpv4-sp-d16
+    -mfloat-abi=hard)
+
 set(STM32F4_HAL_DIRECTORIES
     ${CMAKE_CURRENT_LIST_DIR}/Inc
     ${CMAKE_CURRENT_LIST_DIR}/Inc/Legacy
@@ -111,6 +118,29 @@ add_library(stm32f4_hal_driver::lib ALIAS ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
         cmsis::lib
+        # Include target, which contains the HAL configuration files.
+        # The templates for these files are included in this target.
 )
 
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+        ${STM32F4_HAL_DIRECTORIES}
+)
 
+target_sources(${PROJECT_NAME}
+    PUBLIC
+        ${STM32F4_HAL_DIRECTORIES}
+    PRIVATE
+        ${STM32F4_HAL_SOURCES}
+)
+
+target_compile_definitions(${PROJECT_NAME}
+    PUBLIC
+        ${MCU_MODEL}
+        USE_HAL_DRIVER
+)
+
+target_compile_definitions(${PROJECT_NAME}
+    PUBLIC
+        ${CPU_PARAMETERS}
+)
