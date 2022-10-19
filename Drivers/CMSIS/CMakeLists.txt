@@ -29,26 +29,26 @@ target_sources(${PROJECT_NAME}
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE C)
 
-if(${CMSIS_CORE_LIB})
+if(CMSIS_CORE_LIB)
     add_subdirectory(Core)
 endif()
 
-if(${CMSIS_CORE_A_LIB})
+if(CMSIS_CORE_A_LIB)
     add_subdirectory(Core_A)
 endif()
 
-if(${CMSIS_DSP})
+if(CMSIS_DSP)
     add_subdirectory(DSP)
 endif()
 
-if(${CMSIS_NN})
+if(CMSIS_NN)
     add_subdirectory(NN)
 endif()
 
-if(${CMSIS_RTOS})
+if(CMSIS_RTOS)
     add_subdirectory(RTOS)
 endif()
 
-if(${CMSIS_RTOS2})
+if(CMSIS_RTOS2)
     add_subdirectory(RTOS2)
 endif()

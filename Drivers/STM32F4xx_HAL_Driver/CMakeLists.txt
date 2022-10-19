@@ -115,11 +115,12 @@ set(STM32F4_HAL_SOURCES
 add_library(${PROJECT_NAME} STATIC ${STM32F4_HAL_SOURCES})
 add_library(stm32f4_hal_driver::lib ALIAS ${PROJECT_NAME})
 
+# Include target, which contains the HAL configuration files.
+# The templates for these files are included in this target.
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
         cmsis::lib
-        # Include target, which contains the HAL configuration files.
-        # The templates for these files are included in this target.
+        stm32::lib
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -140,7 +141,7 @@ target_compile_definitions(${PROJECT_NAME}
         USE_HAL_DRIVER
 )
 
-target_compile_definitions(${PROJECT_NAME}
+target_compile_options(${PROJECT_NAME}
     PUBLIC
         ${CPU_PARAMETERS}
 )
