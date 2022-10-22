@@ -6,20 +6,20 @@ The provided SDK from ST Microelectronics was adapted to the STM32f4 Discovery d
 
 All available libraries from the CMSIS catalog are included via the defined options.
 
-'''
+```
 option(CMSIS_CORE_LIB           "Build CMSIS Core library"          OFF)
 option(CMSIS_CORE_A_LIB         "Build CMSIS Core_A library"        OFF)
 option(CMSIS_DSP                "Build CMSIS DSP library"           OFF)
 option(CMSIS_NN                 "Build CMSIS NN library"            OFF)
 option(CMSIS_RTOS               "Build CMSIS RTOS library"          OFF)
 option(CMSIS_RTOS2              "Build CMSIS RTOS2 library"         OFF)
-'''
+```
 
 By default, a basic CMSIS version is built.
 
 # Information
 
-The HAL_DRIVER configuration files, which are created in the project, should be included in the early library building. These are the files 'stm32f4xx_hal_conf.h', 'stm32f4xx_msp.c', 'stm32f4xx_hal_timebase_rtc_alarm.c', 'stm32f4xx_hal_timebase_rtc_wakeup.c' and can be attached to the stm32f4_hal_driver target by copying these files to the appropriate command in the CMOUEND command COPI, using the command COPYCOM, input COPY.
+The HAL_DRIVER configuration files, which are created in the project, should be included in the early library building. These are the files `stm32f4xx_hal_conf.h`, `stm32f4xx_msp.c`, `stm32f4xx_hal_timebase_rtc_alarm.c`, `stm32f4xx_hal_timebase_rtc_wakeup.c` and can be attached to the stm32f4_hal_driver target by copying these files to the appropriate command in the CMOUEND command COPI, using the command COPYCOM, input COPY.
 
 An example of a project using the created SDK
 
