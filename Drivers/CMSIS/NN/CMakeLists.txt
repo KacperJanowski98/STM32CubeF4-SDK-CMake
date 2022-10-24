@@ -43,7 +43,7 @@ set(CMSIS_NN_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/Source/SoftmaxFunctions/arm_softmax_q15.c
 )
 
-add_library(${PROJECT_NAME} STATIC ${CMSIS_NN_SOURCES})
+add_library(${PROJECT_NAME} EXCLUDE_FROM_ALL ${CMSIS_NN_SOURCES})
 add_library(cmsis_nn::lib ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}

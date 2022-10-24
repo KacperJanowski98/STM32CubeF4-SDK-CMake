@@ -290,7 +290,7 @@ set(CMSIS_DSP_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/Source/TransformFunctions/arm_rfft_q31.c
 )
 
-add_library(${PROJECT_NAME} STATIC ${CMSIS_DSP_SOURCES})
+add_library(${PROJECT_NAME} EXCLUDE_FROM_ALL ${CMSIS_DSP_SOURCES})
 add_library(cmsis_dsp::lib ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}

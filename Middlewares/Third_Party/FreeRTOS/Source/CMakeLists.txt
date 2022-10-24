@@ -16,7 +16,7 @@ set(MIDDLEWARE_FREERTOS_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/timers.c
 )
 
-add_library(${PROJECT_NAME} STATIC ${MIDDLEWARE_FREERTOS_SOURCES})
+add_library(${PROJECT_NAME} EXCLUDE_FROM_ALL ${MIDDLEWARE_FREERTOS_SOURCES})
 add_library(middleware_freertos::lib ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}

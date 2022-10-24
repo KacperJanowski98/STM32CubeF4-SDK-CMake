@@ -4,7 +4,7 @@ set(CMSIS_CORE_DIRECTORIES
     ${CMAKE_CURRENT_LIST_DIR}/Include
 )
 
-add_library(${PROJECT_NAME} STATIC)
+add_library(${PROJECT_NAME} EXCLUDE_FROM_ALL)
 add_library(cmsis_core::lib ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}

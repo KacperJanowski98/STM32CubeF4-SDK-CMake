@@ -12,7 +12,7 @@ set(MIDDLEWARE_USB_DEV_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/Core/Src/usbd_ioreq.c
 )
 
-add_library(${PROJECT_NAME} STATIC ${MIDDLEWARE_USB_DEV_SOURCES})
+add_library(${PROJECT_NAME} EXCLUDE_FROM_ALL ${MIDDLEWARE_USB_DEV_SOURCES})
 add_library(middleware_usb_dev::lib ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}

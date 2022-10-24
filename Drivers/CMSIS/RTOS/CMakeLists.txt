@@ -4,7 +4,7 @@ set(CMSIS_RTOS_DIRECTORIES
     ${CMAKE_CURRENT_LIST_DIR}/Template
 )
 
-add_library(${PROJECT_NAME} STATIC)
+add_library(${PROJECT_NAME} EXCLUDE_FROM_ALL)
 add_library(cmsis_rtos::lib ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME}
