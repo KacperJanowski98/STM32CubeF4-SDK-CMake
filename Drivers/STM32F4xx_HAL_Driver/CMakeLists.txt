@@ -83,7 +83,7 @@ set(STM32F4_HAL_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_tim.c
     # ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_timebase_rtc_alarm_template.c
     # ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_timebase_rtc_wakeup_template.c
-    ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_timebase_tim_template.c
+    # ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_timebase_tim_template.c
     ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_uart.c
     ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_usart.c
     ${CMAKE_CURRENT_LIST_DIR}/Src/stm32f4xx_hal_wwdg.c
